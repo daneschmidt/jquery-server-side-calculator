@@ -25,6 +25,8 @@ const resultOfCalc = {
 
 app.post('/api/toCalc', (req,res) => {
     const input1 = (req.body.input1);
+    const input2 = (req.body.input1);
+    const operatorInput = (req.body.operatorInput);
     res.send(418);
 
 });
