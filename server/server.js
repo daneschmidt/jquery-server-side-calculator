@@ -15,15 +15,25 @@ const stuffToCalc = {
                           //now is to take the 'multiply' and make an if then check to swap 'multiply' for * etc
 }
 
+const resultOfCalc = {
+    resultvalue: 4,
+
+}
+
+
+// setup post
 
 app.post('/api/toCalc', (req,res) => {
-    res.send(stuffToCalc);
+    const input1 = (req.body.input1);
+    res.send(418);
 
 });
 
-// app.get('/api/result', (req,res) => {
-//     res.send(stuffToCalc);
-// });
+//setup get
+
+app.get('/api/result', (req,res) => {
+    res.send(resultOfCalc);
+});
 
 
 app.listen(PORT, () => {
