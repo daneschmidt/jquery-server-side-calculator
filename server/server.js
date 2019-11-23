@@ -21,7 +21,13 @@ const resultOfCalc = {
 }
 
 
-// setup post
+
+
+app.get('/api/result', (req,res) => {
+    res.send(resultOfCalc);
+});
+
+
 
 app.post('/api/toCalc', (req,res) => {
     const input1 = (req.body.input1);
@@ -29,12 +35,6 @@ app.post('/api/toCalc', (req,res) => {
     const operatorInput = (req.body.operatorInput);
     res.send(418);
 
-});
-
-//setup get
-
-app.get('/api/result', (req,res) => {
-    res.send(resultOfCalc);
 });
 
 
