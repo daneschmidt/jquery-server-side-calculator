@@ -36,11 +36,11 @@ app.post('/api/toCalc', (req,res) => {
         answer = input1 + input2;
         console.log(answer);
 
-    }else if(opInput == "subtract") {
+    }else if(opInput == "sub") {
         answer = input1 - input2;
         console.log(answer);
 
-    }else if(opInput == "multiply") {
+    }else if(opInput == "multi") {
         answer = input1 * input2;
         console.log(answer);
 

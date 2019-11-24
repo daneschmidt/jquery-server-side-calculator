@@ -44,7 +44,7 @@ function onClickEqual(event) {
     const postPack = {
     input1: $('#js-input1').val(),
     input2: $('#js-input2').val(),
-    opInput: "add",
+    opInput: opInput,
     }
     console.log(postPack);
 }
