@@ -3,10 +3,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 
+
+const calcObject = {};
+
+
+
 app.use(express.static('server/public'));
 // These make req.body available!
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
 // const stuffToCalc = {
 //     value1: 2,
@@ -20,12 +25,24 @@ app.use(bodyParser.json());
 
 // }
 
+function addCalcObject(newCalcObject) {
+    calcObject.push(newCalcObject)
+
+};
 
 
+// //MYRON TESTING STUFF WITH ME
 app.post('/api/toCalc', (req,res) => {
     console.log(req.body)
+    calcObject.addCalcObject();
     res.sendStatus(200);
 });
+
+
+
+
+console.log(calcObject);
+
 
 
 // app.post('/api/toCalc', (req,res) => {
@@ -42,9 +59,6 @@ app.post('/api/toCalc', (req,res) => {
 // app.get('/api/result', (req,res) => {
 //     res.send(resultOfCalc);
 // });
-
-
-
 
 
 
