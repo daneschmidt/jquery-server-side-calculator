@@ -34,6 +34,7 @@ function addCalcObject(newCalcObject) {
 // //MYRON TESTING STUFF WITH ME
 app.post('/api/toCalc', (req,res) => {
     console.log(req.body)
+    const calcObject = req.body;
     calcObject.addCalcObject();
     res.sendStatus(200);
 });
