@@ -24,9 +24,9 @@ app.post('/api/toCalc', (req,res) => {
     // console.log(req.body);
     const newCalc = req.body;
     const opInput = req.body.opInput;
-    const input1 = req.body.input1;
-    const input2 = req.body.input2;
-    
+    const input1 = parseFloat(req.body.input1);
+    const input2 = parseFloat(req.body.input2);
+
     addCalc(newCalc);
     res.sendStatus(200);
     // console.log(newCalc);
