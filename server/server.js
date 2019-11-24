@@ -8,34 +8,37 @@ app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-const stuffToCalc = {
-    value1: 2,
-    value2: 2,
-    operator: 'multiply'  //change fix or address this later... im not sure how this is going to work yet... idea
-                          //now is to take the 'multiply' and make an if then check to swap 'multiply' for * etc
-}
+// const stuffToCalc = {
+//     value1: 2,
+//     value2: 2,
+//     operator: 'multiply'  //change fix or address this later... im not sure how this is going to work yet... idea
+//                           //now is to take the 'multiply' and make an if then check to swap 'multiply' for * etc
+// }
 
-const resultOfCalc = {
-    resultvalue: 4,
+// const resultOfCalc = {
+//     resultvalue: 4,
 
-}
-
-
-
-
-app.get('/api/result', (req,res) => {
-    res.send(resultOfCalc);
-});
-
+// }
 
 
 app.post('/api/toCalc', (req,res) => {
-    const input1 = (req.body.input1);
-    const input2 = (req.body.input1);
-    const operatorInput = (req.body.operatorInput);
-    res.send(418);
+    const calcObject = req.body.calcObject;
+    const input1 = (calcObject.input1);
+    const input2 = (calcObject.input2);
+    const opInput = (calcObject.opInput);
+    res.send(calcObject);
 
 });
+
+
+
+// app.get('/api/result', (req,res) => {
+//     res.send(resultOfCalc);
+// });
+
+
+
+
 
 
 app.listen(PORT, () => {
