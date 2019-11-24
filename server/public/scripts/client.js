@@ -10,7 +10,9 @@ function init () {
 
 function onClickEqual(event) {
     console.log('you just clicked the button');
-    const $input1Field = $('.js-input1').val();
-    const $input2Field = $('.js-input2').val();
-    console.log($input1Field, $input2Field);
+    const postPack = {
+    input1 = $('.js-input1').val(),
+    input2 = $('.js-input2').val(),
+    }
+    console.log(input1, input2);
 }
