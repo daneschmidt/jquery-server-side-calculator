@@ -4,14 +4,15 @@ const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 
 
-const calcObject = {};
+let calcObject = [];
 
 
 
-app.use(express.static('server/public'));
-// These make req.body available!
+
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json())
+app.use(express.static('server/public'));
 
 // const stuffToCalc = {
 //     value1: 2,
@@ -25,21 +26,20 @@ app.use(bodyParser.json())
 
 // }
 
-function addCalcObject(newCalcObject) {
-    calcObject.push(newCalcObject)
+function addCalc(newCalc) {
+    calcObject.push(newCalc)
 
-};
+}
 
 
 // //MYRON TESTING STUFF WITH ME
 app.post('/api/toCalc', (req,res) => {
-    console.log(req.body)
-    const calcObject = req.body;
-    calcObject.addCalcObject();
+    console.log(req.body);
+    const newCalc = req.body;
+    // calcObject.addCalc(newCalc);
     res.sendStatus(200);
+    console.log(newCalc);
 });
-
-
 
 
 console.log(calcObject);
