@@ -14,17 +14,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json())
 app.use(express.static('server/public'));
 
-// const stuffToCalc = {
-//     value1: 2,
-//     value2: 2,
-//     operator: 'multiply'  //change fix or address this later... im not sure how this is going to work yet... idea
-//                           //now is to take the 'multiply' and make an if then check to swap 'multiply' for * etc
-// }
-
-// const resultOfCalc = {
-//     resultvalue: 4,
-
-// }
 
 function addCalc(newCalc) {
     calcObject.push(newCalc)
@@ -32,11 +21,11 @@ function addCalc(newCalc) {
 }
 
 
-// //MYRON TESTING STUFF WITH ME
+
 app.post('/api/toCalc', (req,res) => {
     console.log(req.body);
     const newCalc = req.body;
-    // calcObject.addCalc(newCalc);
+    addCalc(newCalc);
     res.sendStatus(200);
     console.log(newCalc);
 });
@@ -46,20 +35,9 @@ console.log(calcObject);
 
 
 
-// app.post('/api/toCalc', (req,res) => {
-//     const calcObject = req.body.calcObject;
-//     const input1 = (calcObject.input1);
-//     const input2 = (calcObject.input2);
-//     const opInput = (calcObject.opInput);
-//     res.send(calcObject);
-
-// });
-
-
-
-// app.get('/api/result', (req,res) => {
-//     res.send(resultOfCalc);
-// });
+app.get('/api/result', (req,res) => {
+    res.send(resultOfCalc);
+});
 
 
 
