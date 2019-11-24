@@ -21,14 +21,21 @@ app.use(bodyParser.json());
 // }
 
 
-app.post('/api/toCalc', (req,res) => {
-    const calcObject = req.body.calcObject;
-    const input1 = (calcObject.input1);
-    const input2 = (calcObject.input2);
-    const opInput = (calcObject.opInput);
-    res.send(calcObject);
 
+app.post('/api/toCalc', (req,res) => {
+    console.log(req.body)
+    res.sendStatus(200);
 });
+
+
+// app.post('/api/toCalc', (req,res) => {
+//     const calcObject = req.body.calcObject;
+//     const input1 = (calcObject.input1);
+//     const input2 = (calcObject.input2);
+//     const opInput = (calcObject.opInput);
+//     res.send(calcObject);
+
+// });
 
 
 
