@@ -25,23 +25,27 @@ app.post('/api/toCalc', (req,res) => {
     if(opInput == "add") {
         answer = input1 + input2;
         console.log(answer);
+        res.send({answer});
 
     }else if(opInput == "sub") {
         answer = input1 - input2;
         console.log(answer);
+        res.send({answer});
 
     }else if(opInput == "multi") {
         answer = input1 * input2;
         console.log(answer);
+        res.send({answer});
 
     }else if(opInput == "divide") {
         answer = input1 / input2;
         console.log(answer);
+        res.send({answer});
 
     }else {
         console.log('try again');
     }
-
+    return
 });
 
 
@@ -50,7 +54,6 @@ function addCalc(newCalc) {
     console.log(calcHistoryArray);
 
 }
-
 
 app.get('/api/results', (req,res) => {
     res.send(calcHistoryArray);

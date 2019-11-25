@@ -50,17 +50,31 @@ function onClickEqual(event) {
 
 }
 
-// API ///
+/// WORKING ON API
 
-// function submitCalc(postPack) {
-//     console.log(postPack)
-//     $.ajax({
-//         method: 'POST',
-//         url: '/api/toCalc',
-//         data: postPack,
-//     })
-//     .then(function(response) {
+function submitCalc(postPack) {
+    const dataPack = postPack;
+    console.log(postPack)
+    $.ajax({
+        method: 'POST',
+        url: '/api/toCalc',
+        data: dataPack,
+    })
+    .then(function(response) {
+        renderAnswer(response);
+
+        console.log(response);
         
 
-//     })
+    })
+}
 
+function renderAnswer(output) {
+    const $output = $('.js-answer-window');
+
+    $output.empty();
+    $output.append(`
+        ${output.result}
+    `)
+
+}
