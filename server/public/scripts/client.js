@@ -1,3 +1,4 @@
+
 $(document).ready(init);
 
 
@@ -12,7 +13,6 @@ function init () {
     $('#js-divide-btn').on('click', clickDivide);
 
 }
-
 
 function clickAdd(event) {
     opInput = "add";
@@ -38,7 +38,6 @@ function clickDivide(event) {
 
 }
 
-
 function onClickEqual(event) {
     console.log('you just clicked the = button');
     const postPack = {
@@ -47,4 +46,23 @@ function onClickEqual(event) {
     opInput: opInput,
     }
     console.log(postPack);
+    submitCalc(postPack);
+
+}
+
+// API ///
+
+function submitCalc(postPack) {
+    console.log(postPack)
+    $.ajax({
+        method: 'POST',
+        url: '/api/toCalc',
+        data: postPack,
+    })
+    .then(function(response) {
+        render(response);
+
+    })
+
+
 }

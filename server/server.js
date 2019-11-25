@@ -7,18 +7,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json())
 app.use(express.static('server/public'));
 
-//going to move this next section to a module
+let calcHistoryArray = [];
 
-let calcArray = [];
-
-
-function addCalc(newCalc) {
-    calcArray.push(newCalc)
-    console.log(calcArray);
-
-}
-
-//end move to module section
 
 app.post('/api/toCalc', (req,res) => {
     // console.log(req.body);
@@ -51,12 +41,22 @@ app.post('/api/toCalc', (req,res) => {
     }else {
         console.log('try again');
     }
+
 });
 
 
-// app.get('/api/result', (req,res) => {
-//     res.send(resultOfCalc);
-// });
+function addCalc(newCalc) {
+    calcHistoryArray.push(newCalc)
+    console.log(calcHistoryArray);
+
+}
+
+
+
+app.get('/api/results', (req,res) => {
+    res.send(calcHistoryArray);
+    console.log(calcHistoryArray);
+});
 
 
 app.listen(PORT, () => {
