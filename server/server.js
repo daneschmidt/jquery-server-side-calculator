@@ -18,34 +18,34 @@ app.post('/api/toCalc', (req,res) => {
     const input2 = parseFloat(req.body.input2);
 
     addCalc(newCalc);
-    res.sendStatus(200);
     // console.log(newCalc);
     let answer;
 
     if(opInput == "add") {
         answer = input1 + input2;
         console.log(answer);
-        res.send({answer});
+       
 
     }else if(opInput == "sub") {
         answer = input1 - input2;
         console.log(answer);
-        res.send({answer});
+        
 
     }else if(opInput == "multi") {
         answer = input1 * input2;
         console.log(answer);
-        res.send({answer});
+        
 
     }else if(opInput == "divide") {
         answer = input1 / input2;
         console.log(answer);
-        res.send({answer});
+        
 
     }else {
         console.log('try again');
     }
-    return
+
+    res.sendStatus(418);
 });
 
 

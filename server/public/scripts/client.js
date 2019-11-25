@@ -13,6 +13,7 @@ function init () {
     $('#js-divide-btn').on('click', clickDivide);
 
 }
+let opInput = 0;
 
 function clickAdd(event) {
     opInput = "add";
@@ -46,7 +47,7 @@ function onClickEqual(event) {
     opInput: opInput,
     }
     console.log(postPack);
-    // submitCalc(postPack);
+    submitCalc(postPack);
 
 }
 
@@ -60,6 +61,9 @@ function submitCalc(postPack) {
         url: '/api/toCalc',
         data: dataPack,
     })
+
+///// NEED TO SET THIS UP TO GET SERVER HISTORY 
+
     .then(function(response) {
         renderAnswer(response);
 
