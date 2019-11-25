@@ -52,7 +52,6 @@ function addCalc(newCalc) {
 }
 
 
-
 app.get('/api/results', (req,res) => {
     res.send(calcHistoryArray);
     console.log(calcHistoryArray);
