@@ -46,23 +46,21 @@ function onClickEqual(event) {
     opInput: opInput,
     }
     console.log(postPack);
-    submitCalc(postPack);
+    // submitCalc(postPack);
 
 }
 
 // API ///
 
-function submitCalc(postPack) {
-    console.log(postPack)
-    $.ajax({
-        method: 'POST',
-        url: '/api/toCalc',
-        data: postPack,
-    })
-    .then(function(response) {
-        render(response);
+// function submitCalc(postPack) {
+//     console.log(postPack)
+//     $.ajax({
+//         method: 'POST',
+//         url: '/api/toCalc',
+//         data: postPack,
+//     })
+//     .then(function(response) {
+        
 
-    })
+//     })
 
-
-}
